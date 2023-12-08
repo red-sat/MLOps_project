@@ -38,13 +38,14 @@ def prediction_api(
     
     loan_model = joblib.load("./loan_SVC.joblib")
     x = [
-    'checking_account_status', 'duration_months', 'credit_history', 'purpose', 'credit_amount',
-    'savings_account', 'employment_duration', 'installment_rate', 'personal_status_sex',
-    'other_debtors_guarantors', 'residence_duration', 'property', 'age_years',
-    'other_installment_plans', 'housing', 'existing_credits_at_bank', 'job',
-    'people_liable_for_maintenance', 'telephone', 'foreign_worker'
+    checking_account_status, duration_months, credit_history, purpose, credit_amount,
+    savings_account, employment_duration, installment_rate, personal_status_sex,
+    other_debtors_guarantors, residence_duration, property, age_years,
+    other_installment_plans, housing, existing_credits_at_bank, job,
+    people_liable_for_maintenance, telephone, foreign_worker
         ]
-#The output of our model is either 1 (bad loan), hence not eligible or 2 (good loan), eligible.
+
+# The output of our model is either 1 (bad loan), hence not eligible or 2 (good loan), eligible.
 
     prediction = loan_model.predict(pd.DataFrame(x).transpose())
     eligible = int(prediction) == 2
@@ -55,6 +56,9 @@ def prediction_api(
         not_eligible_counter.inc()
         return "this client will be a bad candidate for a bank loan"
     return eligible
+
+# We acknowledge that the number of features is 20, and it's significantly difficult to write all of them in the URL. 
+# Hence we give this example to run: http://127.0.0.1:5000/reda?checking_account_status=1&duration_months=12&credit_history=1&purpose=2&credit_amount=5000&savings_account=1&employment_duration=2&installment_rate=3&personal_status_sex=1&other_debtors_guarantors=2&residence_duration=4&property=2&age_years=30&other_installment_plans=1&housing=2&existing_credits_at_bank=1&job=3&people_liable_for_maintenance=2&telephone=1&foreign_worker=2
 
 
 if __name__ == "__main__":
