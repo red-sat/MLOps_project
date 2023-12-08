@@ -58,8 +58,9 @@ def prediction_api(
     return eligible
 
 # We acknowledge that the number of features is 20, and it's significantly difficult to write all of them in the URL. 
-# Hence we give this example to run: http://127.0.0.1:5000/reda?checking_account_status=1&duration_months=12&credit_history=1&purpose=2&credit_amount=5000&savings_account=1&employment_duration=2&installment_rate=3&personal_status_sex=1&other_debtors_guarantors=2&residence_duration=4&property=2&age_years=30&other_installment_plans=1&housing=2&existing_credits_at_bank=1&job=3&people_liable_for_maintenance=2&telephone=1&foreign_worker=2
+# Hence we give this example to run : 
+# http://127.0.0.1:5000/reda?checking_account_status=1&duration_months=12&credit_history=1&purpose=2&credit_amount=5000&savings_account=1&employment_duration=2&installment_rate=3&personal_status_sex=1&other_debtors_guarantors=2&residence_duration=4&property=2&age_years=30&other_installment_plans=1&housing=2&existing_credits_at_bank=1&job=3&people_liable_for_maintenance=2&telephone=1&foreign_worker=2
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=5000)
+    uvicorn.run(app, host="127.0.0.1", port=5000)
