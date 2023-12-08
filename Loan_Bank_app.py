@@ -54,7 +54,7 @@ def prediction_api(
         return "this client will be a good candidate for a bank loan"
     else:
         not_eligible_counter.inc()
-        return "this client will be a bad candidate for a bank loan"
+        return "Oups! Unfortunately, this client is a bad candidate for a bank loan"
     return eligible
 
 # We acknowledge that the number of features is 20, and it's significantly difficult to write all of them in the URL. 
