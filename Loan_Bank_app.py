@@ -15,7 +15,7 @@ app.mount("/metrics", metrics_app)
 @app.get("/reda")
 def prediction_api(pclass: int, sex: int, age: int):
     loan_model = joblib.load("./loan_SVC.joblib")
-    x = [pclass, sex, age]
+    x = ['status of existing checking account','Duration in months','Credit History','Purpose','Credit Amount','Savings account/bonds','Present employement since','installement rate in percentage of disposable income','Personal status and sex','Other debtors / guarantors','present residence since','Property','Age in years','Other installment plans', 'Housing', 'Number of existing credits at this bank', 'Job', 'Number of people being liable to provide maintenance for', 'Telephone', 'foreign worker']
     prediction = loan_model.predict(pd.DataFrame(x).transpose())
     eligible = int(prediction) == 1
     if eligible:
