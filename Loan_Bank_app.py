@@ -45,7 +45,7 @@ def prediction_api(
     people_liable_for_maintenance, telephone, foreign_worker
         ]
 
-# The output of our model is either 1 (bad loan), hence not eligible or 2 (good loan), eligible.
+# The output of our model is either 1 (bad loan) or 2 (good loan). Hence 1 is an eligible client and the contrary is true.
 
     prediction = loan_model.predict(pd.DataFrame(x).transpose())
     eligible = int(prediction) == 2
