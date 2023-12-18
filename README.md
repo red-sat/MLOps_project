@@ -1,3 +1,12 @@
 # MLOps_project
 
-Some changes
+As part of our MLOps Project, we monitored the functioning of the server and CPU of the local machine using Grafana and prometheus. Here are some examples:
+
+## 1- Tracking CPU ressources & other metrics:
+![git1](https://github.com/red-sat/MLOps_project/assets/138263131/9b2e1d4a-fb92-4fbe-9fc8-14f02947163f)
+
+## 2- Memory usage & HTTP request duration count:
+![git2](https://github.com/red-sat/MLOps_project/assets/138263131/23f7a38d-c5b2-4bbc-92b4-f4d465807a63)
+
+## 3- HTTP requests:
+![git 3](https://github.com/red-sat/MLOps_project/assets/138263131/8a443bfe-8376-4c3f-a756-82d69e65579b)
